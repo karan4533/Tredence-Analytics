@@ -1,0 +1,6 @@
+{
+  "graph_id": "REPLACE_WITH_GRAPH_ID",
+  "initial_state": {
+    "code": "def calculate_sum(a, b):\n    return a + b\n\ndef calculate_product(a, b):\n    return a * b\n"
+  }
+}

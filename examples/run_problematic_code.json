@@ -1,0 +1,7 @@
+{
+  "graph_id": "REPLACE_WITH_GRAPH_ID",
+  "initial_state": {
+    "code": "def risky_function(code):\n    try:\n        result = eval(code)\n    except:\n        result = None\n    return result\n\ndef VeryLongLineFunctionThatDoesNotFollowPep8NamingConventions(parameter1, parameter2):\n    return parameter1 + parameter2\n",
+    "iteration": 0
+  }
+}

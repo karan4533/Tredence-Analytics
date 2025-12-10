@@ -1,0 +1,78 @@
+{
+  "name": "Code Review with Loop",
+  "description": "Full code review workflow with iterative improvement",
+  "nodes": [
+    {
+      "name": "extract",
+      "type": "function",
+      "function_name": "extract_functions",
+      "description": "Extract functions from code"
+    },
+    {
+      "name": "complexity",
+      "type": "function",
+      "function_name": "check_complexity",
+      "description": "Check complexity of extracted functions"
+    },
+    {
+      "name": "detect",
+      "type": "function",
+      "function_name": "detect_issues",
+      "description": "Detect code issues"
+    },
+    {
+      "name": "suggest",
+      "type": "function",
+      "function_name": "suggest_improvements",
+      "description": "Suggest improvements"
+    },
+    {
+      "name": "increment",
+      "type": "function",
+      "function_name": "increment_iteration",
+      "description": "Increment iteration counter"
+    },
+    {
+      "name": "end",
+      "type": "function",
+      "function_name": "pass_through",
+      "description": "End node"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": "extract",
+      "to_node": "complexity",
+      "type": "direct"
+    },
+    {
+      "from_node": "complexity",
+      "to_node": "detect",
+      "type": "direct"
+    },
+    {
+      "from_node": "detect",
+      "to_node": "suggest",
+      "type": "direct"
+    },
+    {
+      "from_node": "suggest",
+      "to_node": "increment",
+      "type": "direct"
+    },
+    {
+      "from_node": "increment",
+      "to_node": "end",
+      "type": "conditional",
+      "condition": "quality_score >= 70 or iteration >= 3"
+    },
+    {
+      "from_node": "increment",
+      "to_node": "complexity",
+      "type": "conditional",
+      "condition": "quality_score < 70 and iteration < 3"
+    }
+  ],
+  "start_node": "extract",
+  "end_nodes": ["end"]
+}
