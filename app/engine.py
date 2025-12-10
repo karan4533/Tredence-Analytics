@@ -1,7 +1,10 @@
-from typing import Dict, Any, Callable, List, Optional
+from typing import Dict, Any, Callable, List, Optional, TYPE_CHECKING
 from datetime import datetime
 import uuid
 import copy
+
+if TYPE_CHECKING:
+    from app.tools import ToolRegistry
 
 
 class WorkflowState:
